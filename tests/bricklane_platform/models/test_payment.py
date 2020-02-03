@@ -1,6 +1,8 @@
 import unittest
 from datetime import datetime
 
+from bricklane_platform.models.payments import BankPayment
+
 
 class TestBankPayment(unittest.TestCase):
 
@@ -8,7 +10,6 @@ class TestBankPayment(unittest.TestCase):
         self.payment = BankPayment()
 
     def test_set_up(self):
-
 
         self.assertIsNone(self.payment.customer_id)
         self.assertIsNone(self.payment.date)
@@ -28,5 +29,5 @@ class TestBankPayment(unittest.TestCase):
         self.payment = BankPayment(test_data)
         self.assertEqual(self.payment.amount, 4433)
         self.assertEqual(self.payment.customer_id, 5340)
-        self.assertEqual(self.payment.fee, 2
+        self.assertEqual(self.payment.fee, 2)
         self.assertEqual(self.payment.date, datetime(2001, 06, 11))

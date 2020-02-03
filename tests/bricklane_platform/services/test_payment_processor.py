@@ -1,9 +1,8 @@
 import unittest
+
+from bricklane_platform.models.payments import Payment, CardPayment
 from ..fixture import get_path
-
-
 from bricklane_platform.services.payment_processor import PaymentProcessor
-from bricklane_platform.models.payment import Payment
 
 
 def create_stub_payment(mock_is_successful):
@@ -39,3 +38,9 @@ class TestPaymentProcessor(unittest.TestCase):
 
         result = self.payment_processor.verify_payments([payment1, payment2, payment3])
         self.assertEqual(result, [payment1, payment3])
+
+    def test_get_available_handler(self):
+        """Test getting a payment handler that is implemented"""
+        payment_handler_class = self.payment_processor.get_payment_handler_class("card")
+        self.assertEqual(payment_handler_class, CardPayment)
+
