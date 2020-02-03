@@ -1,9 +1,6 @@
 import unittest
 from datetime import datetime
 
-from bricklane_platform.models.self.payment import Payment
-from bricklane_platform.models.card import Card
-
 
 class TestBankPayment(unittest.TestCase):
 
