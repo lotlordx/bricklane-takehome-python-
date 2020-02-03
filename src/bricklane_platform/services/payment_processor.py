@@ -1,7 +1,5 @@
 import csv
 
-from bricklane_platform.models.payment import Payment
-
 from bricklane_platform.factory.payment_factory import PaymentFactory
 
 
