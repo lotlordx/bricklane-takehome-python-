@@ -2,11 +2,11 @@ import unittest
 from decimal import Decimal
 
 from bricklane_platform.services.share_engine import ShareEngine
-from bricklane_platform.models.payment import Payment
+from bricklane_platform.models.payments import CardPayment, Payment
 
 
 def create_payment(customer_id, amount):
-    payment = Payment()
+    payment = CardPayment()
     payment.customer_id = customer_id
     payment.amount = amount
     return payment

@@ -6,9 +6,9 @@ class PaymentFactory(object):
 	payment_mode = {}
 
 	def __init__(self):
-		self.load_autos()
+		self.load_payments()
 
-	def load_autos(self):
+	def load_payments(self):
 		classes = getmembers(payments, lambda m: isclass(m) and not isabstract(m))
 
 		for name, _type in classes:

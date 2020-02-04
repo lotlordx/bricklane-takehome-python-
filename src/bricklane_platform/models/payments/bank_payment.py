@@ -15,4 +15,5 @@ class BankPayment(Payment):
         self.bank = bank
 
     def is_successful(self):
-        return True
+        if self.bank.status == "successfully processed" or self.bank.status is None:
+            return True
